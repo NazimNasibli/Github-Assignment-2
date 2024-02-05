@@ -37,5 +37,6 @@ public class Main {
         RandomArrayCreator newArray = new RandomArrayCreator(arraySize);
 
 
-    }
+ }
+
 }
