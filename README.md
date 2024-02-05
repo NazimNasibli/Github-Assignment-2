@@ -1,6 +1,5 @@
 # Github-Assignment-2
 
-Description
 This Java project is a collaborative effort by a group of 3-5 students to create a menu-driven console application that performs various operations on an integer array. The main functionality includes generating a random integer array, finding the minimum and maximum values, calculating the average and differences from the average for each element, and computing the sum of elements with odd- and even-numbered indexes.
 
 How to Use
