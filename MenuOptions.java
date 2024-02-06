@@ -1,16 +1,5 @@
-import java.util.*;
 
 public class MenuOptions{
-
-    static Scanner input = new Scanner(System.in);
-
-    final static int numberOfChoices = 4;
-
-    private static int arraySize = -1 ;
-
-    public static int getArraySize(){
-        return arraySize;
-    }
 
     public static void listOptions(){
         System.out.println("1- Find the min and max of the array\n"+
@@ -19,43 +8,16 @@ public class MenuOptions{
                            "4- Exit\n");
     }
 
-    public static int getUserChoice(){
-        
-        int inp = 0;
-
-        boolean validInp = false;
-        System.out.printf("Pick an option from 1 to %d: ", numberOfChoices);
-
-        while(!validInp){
-
-            if(input.hasNextInt()){
-                inp = input.nextInt();
-
-                if(inp >= 1 && inp <= numberOfChoices){
-                    validInp = true;
-                }
-                else{
-                    System.out.printf("Invalid choice. Please pick an option from 1 to %d:", numberOfChoices);
-                }
-            }
-            else{
-                System.out.printf("Invalid input. Please pick an integer from 1 to %d:", numberOfChoices);
-                input.next();
-            }
-        }
-    
-        // inp = input.nextInt();
-
-        return inp;
-    }
-
     public static boolean proccessUserChoice(int choice){
+        int arraySize = GetInput.getArraySize();
+
         RandomArrayCreator arrayCreator = new RandomArrayCreator(arraySize);
         int[] newArray = arrayCreator.getRandomArray();
 
         switch(choice){
             case 1:
                 //find min max
+                System.out.printf("The min of the array is: %d\nThe max of the array is: %d\n", MinMax.minOfArray(newArray), MinMax.maxOfArray(newArray));
                 return true;
 
             case 2:
@@ -81,34 +43,6 @@ public class MenuOptions{
 
         }
         return false;
-    }
-
-    public static void getArraySizeInput() {
-        
-        boolean isValidSize = false;
-        System.out.print("Enter the size of the array (between 0 and 100): ");
-
-        while (!isValidSize) 
-        {
-        
-            if (input.hasNextInt()) {
-                arraySize = input.nextInt();
-
-                if (arraySize > 0 && arraySize <= 100) 
-                {
-                    isValidSize = true; 
-                } 
-                else
-                {
-                    System.out.print("Invalid size. Please enter a value between 0 and 100: ");
-                }
-            } 
-            else 
-            {
-                System.out.print("Invalid input. Please enter an integer between 0 and 100: ");
-                input.next(); 
-            }
-        }
     }
 
 }
