@@ -35,6 +35,8 @@ public class Main {
         input.close();
 
         RandomArrayCreator newArray = new RandomArrayCreator(arraySize);
+        SumOfIndexes.updateIndexSum(newArray.getRandomArray());
+        System.out.println(SumOfIndexes.getEvenSum() + " " + SumOfIndexes.getOddSum());
 
 
  }
