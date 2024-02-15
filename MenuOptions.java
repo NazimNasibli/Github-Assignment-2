@@ -14,6 +14,7 @@ public class MenuOptions{
         RandomArrayCreator arrayCreator = new RandomArrayCreator(arraySize);
         int[] newArray = arrayCreator.getRandomArray();
 
+        System.out.println("askdhjfbasdkfjhb");
         switch(choice){
             case 1:
                 //find min max
